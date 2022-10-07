@@ -22,19 +22,26 @@ async def start(message: types.message):
 async def send_signals(message: types.message):
     if(BotDB.user_exists(message.from_user.id)):
         await message.answer(Get_Data.get_data())
-        
-    
+    else:
+        await message.answer("Продлите подписку! ")
 
+              
                 
 @dp.message_handler(Text(equals='🚨 Инфо'))
 async def send_info(message: types.message):
-    await message.answer('pass')
-
-
+    await message.answer('Любая информация о вашем тг боте')
 
 # buy
 @dp.message_handler(Text(equals='Купить подписку'))
 async def buy(message: types.Message):
+
+    if (BotDB.user_exists(message.from_user.id)):
+        await message.answer('Ваша подписка еще не истикла')
+    else:
+        BotDB.delete_user(message.from_user.id)
+
+
+
     if config.PAYMENTS_TOKEN.split(':')[1] == 'TEST':
         await bot.send_message(message.chat.id, "Тестовый платеж!!!")
 
