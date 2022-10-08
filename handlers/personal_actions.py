@@ -29,7 +29,7 @@ async def send_signals(message: types.message):
                 
 @dp.message_handler(Text(equals='🚨 Инфо'))
 async def send_info(message: types.message):
-    await message.answer('Любая информация о вашем тг боте')
+    await message.answer('По всем вопросам: @ryzeee_gang')
 
 # buy
 @dp.message_handler(Text(equals='Купить подписку'))
