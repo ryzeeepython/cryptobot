@@ -1,6 +1,7 @@
 # cryptobot
 
 IF YOU WANT TO START THE BOT YOU SHOULD PASTE YOUR TOKENS IN THE 'config.py'
+
 CONTROL AND CHECK SUBSCRIBERS YOU CAN IN 'db.db' - database file
 
 made by RyZeEe
